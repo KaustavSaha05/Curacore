@@ -2,12 +2,10 @@
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from dotenv import load_dotenv # <<< ADD THIS IMPORT
-import os # <<< ADD THIS IMPORT
+from dotenv import load_dotenv #
+import os 
 
-# --- ADD THIS LINE TO LOAD THE .ENV FILE ---
 load_dotenv()
-# -------------------------------------------
 
 from chatbot import get_chatbot_response 
 

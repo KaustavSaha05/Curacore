@@ -8,7 +8,6 @@ from langchain_core.prompts import PromptTemplate
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv, find_dotenv
 
-
 load_dotenv(find_dotenv())
 
 DB_FAISS_PATH = "vectorstore/db_faiss"
@@ -44,7 +43,7 @@ qa_chain = RetrievalQA.from_chain_type(
     llm=llm,
     chain_type="stuff",
     retriever=db.as_retriever(search_kwargs={'k': 3}),
-    return_source_documents=False, # We only need the result for the chatbot
+    return_source_documents=False, 
     chain_type_kwargs={'prompt': prompt}
 )
 
